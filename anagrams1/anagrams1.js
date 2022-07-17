@@ -4,16 +4,16 @@ function alphabetize(a) {
 }
 function getAnagramsOf(input) {
     const alphabeticalInput = alphabetize(input);
-    const result = palavras.filter(palavra => alphabetize(palavra) === alphabeticalInput);
+    const anagrams = palavras.filter(palavra => alphabetize(palavra) === alphabeticalInput);
     let tagResult = document.createElement("ul");
-    result.forEach(element => {
+    anagrams.forEach(element => {
         let tagLi = document.createElement("li");
         tagLi.innerText = element;
         tagResult.appendChild(tagLi);
         return false;
     })
     document.body.appendChild(tagResult)
-    return result;
+    return anagrams;
 }
 button.addEventListener("click", function () {
     let typedText = document.getElementById("input").value;
