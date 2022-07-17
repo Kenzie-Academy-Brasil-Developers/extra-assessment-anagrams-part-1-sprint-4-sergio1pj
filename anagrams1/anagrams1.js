@@ -5,14 +5,14 @@ function alphabetize(a) {
 function getAnagramsOf(input) {
     const alphabeticalInput = alphabetize(input);
     const anagrams = palavras.filter(palavra => alphabetize(palavra) === alphabeticalInput);
-    let tagResult = document.createElement("ul");
-    anagrams.forEach(element => {
+    let anagramsList = document.createElement("ul");
+    anagrams.forEach(anagram => {
         let tagLi = document.createElement("li");
-        tagLi.innerText = element;
-        tagResult.appendChild(tagLi);
+        tagLi.innerText = anagram;
+        anagramsList.appendChild(tagLi);
         return false;
     })
-    document.body.appendChild(tagResult)
+    document.body.appendChild(anagramsList)
     return anagrams;
 }
 button.addEventListener("click", function () {
