@@ -1,9 +1,21 @@
 const button = document.getElementById("findButton");
+function alphabetize(a) {
+    return a.toLowerCase().split("").sort().join("").trim();
+}
+function getAnagramsOf(input) {
+    const alphabeticalInput = alphabetize(input);
+    const result = palavras.filter(palavra => alphabetize(palavra) === alphabeticalInput);
+    let tagResult = document.createElement("ul");
+    result.forEach(element => {
+        let tagLi = document.createElement("li");
+        tagLi.innerText = element;
+        tagResult.appendChild(tagLi);
+        return false;
+    })
+    document.body.appendChild(tagResult)
+    return result;
+}
 button.addEventListener("click", function () {
     let typedText = document.getElementById("input").value;
     getAnagramsOf(typedText);
-    });
-
-function getAnagramsOf(input) {
-    console.log("teste");
-}
+});
